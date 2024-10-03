@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flappy Matt</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="game-container">
+        <h1 class="game-title">Flappy Matt</h1>
+        <canvas id="gameCanvas" width="800" height="600"></canvas>
+        <p>Press SPACE or Click to jump</p>
+    </div>
+    <img id="heroImage" src="hero.png" style="display: none;">
+    <audio id="jumpSound" src="jump.mp3"></audio>
+    <audio id="scoreSound" src="score.mp3"></audio>
+    <audio id="gameOverSound" src="gameover.mp3"></audio>
+    <script src="game.js"></script>
+</body>
+</html>

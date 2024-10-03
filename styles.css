@@ -1,0 +1,95 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+    background: linear-gradient(to bottom, #001f3f 0%, #003366 100%);
+    position: relative;
+}
+
+body::before, body::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 30%;
+    background-repeat: repeat-x;
+    background-position: bottom;
+}
+
+body::before {
+    background-image: 
+        /* Canal houses */
+        linear-gradient(to bottom, transparent 50%, #1a1a1a 50%, #1a1a1a 60%, transparent 60%),
+        linear-gradient(to bottom, transparent 80%, #333 80%, #333 90%, transparent 90%),
+        linear-gradient(to bottom, transparent 70%, #222 70%, #222 80%, transparent 80%);
+    background-size: 80px 100%, 60px 100%, 40px 100%;
+    z-index: 1;
+}
+
+body::after {
+    background-image: 
+        /* Bridges */
+        radial-gradient(circle at 50% 100%, transparent 20px, #444 20px, #444 25px, transparent 25px),
+        /* Bicycles */
+        radial-gradient(circle at 50% 100%, #555 2px, transparent 2px);
+    background-size: 200px 30px, 40px 10px;
+    z-index: 2;
+}
+
+.game-container {
+    text-align: center;
+    position: relative;
+    z-index: 3;
+}
+
+.game-title {
+    font-size: 48px;
+    color: #FFD700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5),
+                 0 0 10px rgba(255, 215, 0, 0.7);
+    margin-bottom: 20px;
+}
+
+h1, p {
+    color: #FFD700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+canvas {
+    border: 3px solid #FFD700;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+}
+
+.snowflake {
+    color: #fff;
+    font-size: 1em;
+    font-family: Arial;
+    text-shadow: 0 0 1px #000;
+    position: fixed;
+    top: -10%;
+    z-index: 2;
+    user-select: none;
+    cursor: default;
+    animation-name: snowflakes-fall, snowflakes-shake;
+    animation-duration: 10s, 3s;
+    animation-timing-function: linear, ease-in-out;
+    animation-iteration-count: infinite, infinite;
+    animation-play-state: running, running;
+}
+
+@keyframes snowflakes-fall {
+    0% { top: -10%; }
+    100% { top: 100%; }
+}
+
+@keyframes snowflakes-shake {
+    0% { transform: translateX(0px); }
+    50% { transform: translateX(80px); }
+    100% { transform: translateX(0px); }
+}
